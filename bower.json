@@ -3,6 +3,8 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass-official": "~3.3.1",
-    "modernizr": "~2.8.1"
+    "modernizr": "~2.8.1",
+    "zeptojs": "git://github.com/madrobby/zepto.git#~1.1.6",
+    "Swipe": "https://github.com/yuhualee/Swipe.git#~2.0.1"
   }
 }

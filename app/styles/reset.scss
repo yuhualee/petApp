@@ -1,0 +1,74 @@
+$blue:            #0b98d6 !default;
+$yellow:          #ffef37 !default;
+$f-black:         #525a66 !default;
+$f-gray:          #848c99 !default;
+$i-blue:          #06a0e4 !default;
+$i-gray:          #808080 !default;
+$bg-color:        #fafafa !default;
+$border-color:    #d6d6d6 !default;
+
+
+
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,form,dl,dt,dd,span,p,button,input,th,td,em,figure{
+    margin:0px;
+    padding:0px; 
+}
+body{
+    font-family: "Helvetica Neue", Helvetica, STHeiTi,Arial, sans-serif; 
+    color: $f-black;
+    background-color: $bg-color;
+    font-size: 14px;
+    line-height: 1.5;
+     -webkit-overflow-scrolling: touch; 
+     -webkit-text-size-adjust : none ;
+        -moz-text-size-adjust : none ;
+         -ms-text-size-adjust : none ;
+             text-size-adjust : none
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display: block;}
+audio,canvas,video{
+    display: inline-block;
+    vertical-align: baseline;
+}
+a{
+    background: transparent; 
+    text-decoration: none; 
+    -webkit-tap-highlight-color: transparent; 
+    color: $f-black;
+}
+b,strong { font-weight: bold;}
+img {
+    border: 0; 
+    vertical-align: middle;
+}
+button,input,optgroup,select,textarea {
+    color: inherit; 
+    font: inherit; 
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    td,th {
+        padding: 0;
+    }
+}
+ul,li{
+    list-style: none;
+}
+*,*:after,*:before { 
+    -webkit-box-sizing: border-box; 
+       -moz-box-sizing: border-box; 
+            box-sizing: border-box; 
+}
+.fl{ float: left;}
+.fr{ float: right;}
+.cf:before,.cf:after{
+    content: "";
+    display: table;
+}
+.cf:after{
+    clear: both;
+}
+.cf{
+    zoom:1;
+}
