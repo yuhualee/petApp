@@ -1,9 +1,4 @@
 @import "reset";
-@mixin rounded-corner($arc){
-    -webkit-border-radius:$arc;
-       -moz-border-radius:$arc;
-           border-radius: $arc;
-}
 @mixin rotate($angle){
     -webkit-transform:rotate($angle);
         -ms-transform:rotate($angle);
@@ -55,6 +50,12 @@
 %bg-image{
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
+}
+%icon{
+    border-image: url(../images/icon.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
 }
 @mixin table-equal($children:li){
     display: table;
@@ -65,12 +66,14 @@
         #{$children}{
             display: table-cell;
             overflow: hidden;
+            vertical-align: top;
         }
     }
     @else{
         .#{children}{
             display: table-cell;
             overflow: hidden;
+            vertical-align: top;
         }
     }
 }
@@ -269,5 +272,72 @@ header.hd{
     }
     .today-news{
 
+    }
+    .weekly-star{
+        .bd{
+            padding:10px;
+            .list-pic{
+                @include table-equal;
+                .item{
+                    width: 50%;
+                    &:nth-of-type(1){
+                        padding-right: 5px;
+                    }
+                    &:nth-of-type(2){
+                        padding-left: 5px;
+                    }
+                    .img{
+                        display: block;
+                        @extend %bg-image;
+                        position: relative;
+                        .text{
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 25px;
+                            line-height: 19px;
+                            padding: 3px;
+                            color: #fff;
+                            background-color: rgba(0,0,0,0.5);
+                            .age{
+                                margin-left: 3px;
+                            }
+                            .kwame{
+                                position: absolute;
+                                right: 3px;
+                                top: 3px;
+                                width: 19px;
+                                height: 19px;
+                                line-height: 19px;
+                                background-color: $i-blue;
+                                @include rounded-corner(2px,2px,2px,2px);
+                                text-align: center;
+                            }
+                            .sex{
+                                position: absolute;
+                                right: 30px;
+                                top: 3px;
+                                width: 20px;
+                                height: 20px;
+                                .icon{
+                                    @extend %icon;
+                                    display: inline-block;
+                                    width: 20px;
+                                    height: 20px;
+                                    &.girl{
+                                        background-position: 0 0;
+                                    }
+                                    &.boy{
+                                        background-position: -20px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

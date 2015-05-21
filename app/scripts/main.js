@@ -38,6 +38,7 @@
 	// play-story
 	function reset(){
 		imgScale($('.index .slide .slider-li'),0.5);
+		imgScale($('.weekly-star .img'),0.7);
 	}
 
 	reset();
