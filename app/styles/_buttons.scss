@@ -1,0 +1,31 @@
+.btn{
+	position: relative;
+	display: inline-block;
+	border: 1px solid $primary-color;
+	border-radius: $border-radius;
+	background-color: $white-color;
+	color: $primary-color;
+	padding: 3px 6px;
+	font-size: $normal-font-size;
+	line-height: $normal-font-size;
+	&.btn-small{
+		padding: 3px 6px;
+		font-size: $small-font-size;
+		line-height: $small-font-size;
+	}
+	&.btn-big{
+		padding: 3px 6px;
+		font-size: $big-font-size;
+		line-height: $big-font-size;
+	}
+	&.btn-block{}
+	&.btn-primary{
+		background-color: $primary-color;
+		color: $white-color;
+	}
+	&.btn-opposite{
+		background-color: $opposite-color;
+		color: $white-color;
+		border-color: $opposite-color;
+	}
+}

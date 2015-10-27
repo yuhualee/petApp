@@ -1,24 +1,16 @@
-$blue:            #0b98d6 !default;
-$yellow:          #ffef37 !default;
-$f-black:         #525a66 !default;
-$f-gray:          #848c99 !default;
-$i-blue:          #06a0e4 !default;
-$i-gray:          #808080 !default;
-$bg-color:        #fafafa !default;
-$border-color:    #d6d6d6 !default;
-
-
+@import "variables";
+@import "mixin";
 
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,form,dl,dt,dd,span,p,button,input,th,td,em,figure{
     margin:0px;
     padding:0px; 
 }
 body{
-    font-family: "Helvetica Neue", Helvetica, STHeiTi,Arial, sans-serif; 
-    color: $f-black;
-    background-color: $bg-color;
-    font-size: 14px;
-    line-height: 1.5;
+    font-family: $font-family-default; 
+    color: $default-color;
+    background-color:$default-background-color;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
      -webkit-overflow-scrolling: touch; 
      -webkit-text-size-adjust : none ;
         -moz-text-size-adjust : none ;
@@ -34,12 +26,13 @@ a{
     background: transparent; 
     text-decoration: none; 
     -webkit-tap-highlight-color: transparent; 
-    color: $f-black;
+    color: $default-color;
 }
 b,strong { font-weight: bold;}
 img {
     border: 0; 
     vertical-align: middle;
+    width: 100%;
 }
 button,input,optgroup,select,textarea {
     color: inherit; 
@@ -55,6 +48,9 @@ table {
 ul,li{
     list-style: none;
 }
+i,em{
+    font-style: normal;
+}
 *,*:after,*:before { 
     -webkit-box-sizing: border-box; 
        -moz-box-sizing: border-box; 
@@ -62,13 +58,3 @@ ul,li{
 }
 .fl{ float: left;}
 .fr{ float: right;}
-.cf:before,.cf:after{
-    content: "";
-    display: table;
-}
-.cf:after{
-    clear: both;
-}
-.cf{
-    zoom:1;
-}

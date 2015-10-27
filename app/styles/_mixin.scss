@@ -1,0 +1,66 @@
+@mixin clearfix(){
+    &:before,
+    &:after{
+        display: table;
+        content: ' ';
+    }
+    &:after{
+        clear: both;
+    }
+}
+
+@mixin rotate($angle){
+    -webkit-transform:rotate($angle);
+        -ms-transform:rotate($angle);
+         -o-transform:rotate($angle); 
+            transform:rotate($angle);
+}
+@mixin transform($lper,$tper){
+    -webkit-transform: translate($lper,$tper);
+        -ms-transform: translate($lper,$tper);
+         -o-transform: translate($lper,$tper); 
+            transform: translate($lper,$tper);
+}
+@mixin arrow($w,$bw,$bc,$nc){
+    display: block;
+    width: $w;
+    height: $w;
+    border:$bw solid $bc;
+    border-top-color: $nc;
+    border-right-color: $nc;
+    background-color: $nc;
+}
+@mixin ellip{
+    overflow: hidden;
+    white-space: nowrap;   
+    text-overflow: ellipsis;
+}
+@mixin flex{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -moz-align-items: center;
+    align-items: center;
+        .flex-cell{
+        -webkit-box-flex:1;
+           -moz-box-flex:1;
+                box-flex:1;
+                -ms-flex:1;
+            -webkit-flex:1;
+               -moz-flex:1;
+                    flex:1;
+    
+    }
+}
+@mixin card{
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    background-color: $card-bg;
+    padding: 0 12px;
+    margin-bottom: 10px;
+}
