@@ -2,15 +2,9 @@
 'use strict';
 /*global $:false, window:false */
 
-var Module = {
-	pages: {}
-};
-
-Module.pages.fn = function(){
-	return function fn(){
-	};
-}
-
+// var Module = {
+// 	pages: {}
+// };
 
 
 //image scale
@@ -26,13 +20,39 @@ Module.pages.fn = function(){
 	// play-story
 	function reset(){
 		imgScale($('.qa .top-banner'),1);
-		// imgScale($('.weekly-star .img'),0.7);
+		imgScale($('.index-page .have-eat .box'),1);
+		imgScale($('.index-page .yummy .img'),0.64);
 	}
 
 	reset();
 	window.onresize = function(){
-		reset();
+		// reset();
 	};
 })();
 
 
+// qa-ask
+;(function(){
+	$('.qa-ask .baby .add-btn').click(function(){
+		$('.qa-ask .baby .add').show();
+	});
+	var oLis = $('.question .type .label');
+	oLis.each(function(){
+		$(this).unbind();
+		$(this).bind('touchstart',function(){
+			if($(this).hasClass('select')){
+				$(this).data('touch','');
+			}else{
+				$(this).data('touch',true);
+			}
+		});
+		$(this).bind('touchend',function(){
+			if($(this).data('touch')){
+				$(this).addClass('select');
+			}else{
+				$(this).removeClass('select');
+			}
+		});
+	});
+
+})();

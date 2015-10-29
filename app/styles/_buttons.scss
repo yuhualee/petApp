@@ -28,4 +28,15 @@
 		color: $white-color;
 		border-color: $opposite-color;
 	}
+	&.btn-submit{
+		background-color: $primary-color;
+		color: $white-color;
+		height: 40px;
+		font-size: $big-font-size;
+		line-height: $big-font-size;
+		width: 100%;
+		text-align: center;
+		line-height: 32px;
+		border-radius: 4px;
+	}
 }
