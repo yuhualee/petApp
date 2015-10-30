@@ -21,12 +21,12 @@
 	function reset(){
 		imgScale($('.qa .top-banner'),1);
 		imgScale($('.index-page .have-eat .box'),1);
-		imgScale($('.index-page .yummy .img'),0.64);
+		imgScale($('.index-page .yummy .img'),1);
 	}
 
 	reset();
 	window.onresize = function(){
-		// reset();
+		reset();
 	};
 })();
 
