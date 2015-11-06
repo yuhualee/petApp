@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixin";
+
 input,
 textarea,
 button,
@@ -32,4 +35,83 @@ input[type="color"] {
   border: $border-default;
   border-radius: 3px;
   outline: none;
+}
+
+.order-header{
+  height: 41px;
+  border-bottom: 1px solid $border-color;
+  background-color: #f8f8f8;
+  padding: 10px 50px;
+  position: relative;
+  .title{
+    font-size: $big-font-size;
+    text-align: center;
+    line-height: 20px;
+  }
+  .arrow{
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    width: 20px;
+    height: 20px;
+    @include arrow(12px,2px,#333,#f8f8f8);
+    @include rotate(45deg);
+  }
+  .right{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    line-height: 20px;
+    height: 20px;
+    font-size: $normal-font-size;
+  }
+}
+.form-card{
+  background-color: #fff;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  width: 100%;
+  margin-bottom: 10px;
+  &.no-border{
+    border-top: none;
+  }
+  .form-item{
+    padding: 10px 25px 10px 10px;
+    border-bottom: 1px solid $border-color;
+    @include clearfix;
+    position: relative;
+    &:last-child{
+      border-bottom:none; 
+    }
+    &.left-icon{
+      padding-left: 40px;
+      .icon{
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: 10px;
+        top: 50%;
+        margin-top: -10px;
+        @extend %icon;
+      }
+    }
+    a{
+      display: block;
+      &:after{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -8px;
+        width: 20px;
+        height: 20px;
+        content: "";
+        @include arrow(12px,2px,#333,#f8f8f8);
+        @include rotate(-135deg);
+      }
+    }
+    .linkman{
+      @extend clearfix;
+    }
+  }
 }

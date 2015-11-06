@@ -20,6 +20,7 @@
 	// play-story
 	function reset(){
 		imgScale($('.qa .top-banner'),1);
+		imgScale($('.goods .top-banner img'),1);
 		imgScale($('.index-page .have-eat .box'),1);
 		imgScale($('.index-page .yummy .img'),1);
 	}
@@ -55,4 +56,13 @@
 		});
 	});
 
+})();
+
+;(function(){
+	$('.tab .tab-hd .item').each(function(){
+		$(this).tap(function(){
+			$(this).addClass('current').siblings().removeClass('current');
+			$(this).parent('.tab-hd').siblings('.tab-bd').find('.item').hide().eq($(this).index()).show();
+		});
+	});
 })();

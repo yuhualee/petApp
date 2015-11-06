@@ -1,0 +1,235 @@
+@import "reset";
+
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.evaluation{
+	.li{
+		border-bottom: 1px solid $border-color;
+		padding: 10px 20px;
+		.author{
+			@include clearfix;
+			.avatar{
+                @extend %avatar;  
+                float: left; 
+                width: 40px;
+                height: 40px;
+            }
+			.name{
+				float: left;
+				padding: 10px 0;
+				line-height: 20px;
+				margin-left: 10px;
+				font-size: $big-font-size;
+				color: $primary-color;
+				font-weight: bold;
+			}
+		}
+		.breif{
+			margin-top: 5px;
+			font-size: $small-font-size;
+		}
+		.time{
+			font-size: $smaller-font-size;
+			color: $second-color;
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+}
+.goods{
+	.container{
+	    width: 100%;
+	}
+	.footer ~ .container{
+	    padding-bottom: 58px;
+	}
+	.footer{
+		position: fixed;
+	    height: 48px;
+	    width: 100%;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    background-color: #fff;
+	    border-top: 1px solid $border-color;
+	    z-index: 99999;
+	    .flex{
+	        @include flex;
+	        height: 100%;
+	        .flex-cell{
+	            text-align: center;
+	            position: relative;
+	            text-align: center;
+	            line-height: 28px;
+	            padding: 10px 0;
+	            .icon{
+	            	display: inline-block;
+	            	width: 20px;
+	            	height: 20px;
+	            	@extend %icon;
+	            	margin-top: -5px;
+	            	vertical-align: middle;
+	            }
+	            &.service{
+	            	color: #047daf;
+	            	border-right: 1px solid $border-color;
+	            }
+	            &.shopping{
+	            	color: $primary-color;
+	            	border-right: 1px solid $border-color;
+	            	.icon{
+	            		position: relative;
+	            		 .number{
+		            		font-size: 10px;
+		            		color: #fff;
+		            		background-color: $primary-color;
+		            		border-radius: 50%;
+		            		position: absolute;
+		            		right: -7px;
+		            		top: -7px;
+		            		width: 14px;
+		            		height: 14px;
+		            		overflow: hidden;
+		            		line-height: 14px;
+		            		text-align: center;
+		            		font-weight: 100;
+	            		}
+	            	}
+	            }
+	            &.add{
+	            	background-color: $primary-color;
+	            	color: $white-color;
+	            }
+	        }
+	    }
+	}
+	.goods-detail{
+		width: 100%;
+		.top-banner{
+			img{
+				height: 100%;
+			}
+		}
+		.describe{
+			padding: 5px 12px;
+			background-color: #fff;
+			border-bottom: 1px solid $border-color;
+			.name{
+				font-size: $normal-font-size;
+				font-weight: bold;
+			}
+			.detail{
+				@include clearfix;
+				margin-top: 5px;
+				.label{
+					font-size: $normal-font-size;
+					color: $second-color;
+					float: left;
+				}
+				.price{
+					font-size: $bigger-font-size;
+					color: $primary-color;
+					font-weight: 200;
+					float: left;
+					em{
+						font-size: $normal-font-size;
+					}
+				}
+				.tip{
+					font-size: $smaller-font-size;
+					background-color: $primary-color;
+					color: #fff;
+					display: inline-block;
+					padding: 0 3px;
+					height: 18px;
+					line-height: 18px;
+					float: left;
+					margin-left: 10px;
+					margin-top: 2px;
+				}
+			}
+		}
+		.purchase-method{
+			background-color: #fff;
+			border-bottom: 1px solid $border-color;
+			border-top: 1px solid $border-color;
+			@include clearfix;
+			padding: 8px 12px;
+			margin-top: 10px;
+			a{
+				position: relative;
+				display: block;
+				&:after{
+		        position: absolute;
+		        right: 0;
+		        top: 4px;
+		        width: 20px;
+		        height: 20px;
+		        content: "";
+		        @include arrow(12px,2px,#a2a2a2,#fff);
+		        @include rotate(-135deg);
+		      }
+			}
+		}
+		.tab{
+			margin-top: 10px;
+			background-color: #fff;
+			border-bottom: 1px solid $border-color;
+			border-top: 1px solid $border-color;
+			.tab-hd{
+				@include flex;
+				border-bottom: 1px solid $border-color;
+				line-height: 40px;
+				.item{
+					text-align: center;
+					position: relative;
+					&.current:after{
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						content: "";
+						height: 2px;
+						overflow: hidden;
+						width: 100%;
+						background-color: $primary-color;
+					}
+				}
+			}
+			.tab-bd{
+				.item{
+					display: none;
+					.ul{
+						.li{
+							padding: 8px 12px;
+							border-bottom: 1px solid $border-color;
+							line-height: 22px;
+							a{
+								position: relative;
+								display: block;
+								&:after{
+							        position: absolute;
+							        right: 0;
+							        top: 4px;
+							        width: 20px;
+							        height: 20px;
+							        content: "";
+							        @include arrow(12px,2px,#a2a2a2,#fff);
+							        @include rotate(-135deg);
+							      }
+							}
+							&:last-child{
+								border-bottom: none;
+							}
+						}
+					}
+					&.current{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

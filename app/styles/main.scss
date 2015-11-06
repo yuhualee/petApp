@@ -1,36 +1,7 @@
 @import "reset";
 @import "buttons";
 
-%avatar{
-    background: url(../images/avatar.jpg) no-repeat center;
-    background-size: cover;
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-}
-%bg-image {
-    background-image: url(../images/icon.png);
-    background-repeat: no-repeat;
-    background-size: 100px;
-}
-%icon{
-    @extend %bg-image;
-    width: 20px;
-    height: 20px;
-    &.icon01{
-        background-position: 0 0;
-    }
-    &.icon02{
-        background-position: -20px 0;
-    }
-    &.icon03{
-        background-position: -40px 0;
-    }
-    &.icon04{
-        background-position: -60px 0;
-    }
-}
+
 .modal-bg{
     position: fixed;
     left: 0;
@@ -96,7 +67,6 @@
 .footer{
     position: fixed;
     height: 48px;
-    padding: 6px;
     width: 100%;
     left: 0;
     right: 0;
@@ -107,46 +77,115 @@
     .flex{
         @include flex;
         .flex-cell{
-            font-size: $smaller-font-size;
-            color: $default-color;
             text-align: center;
-            padding-top: 20px;
             position: relative;
-            line-height: 16px;
-            white-space: 34px;
-            .icon{
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                top: 0;
-                left: 50%;
-                margin-left: -10px;
-                @extend %icon;
-            }
-            &:nth-of-type(1).current{
-                color: $primary-color;
+        }
+    }
+    &.main-footer{
+        padding: 6px;
+        .flex{
+            .flex-cell{
+                font-size: $smaller-font-size;
+                color: $default-color;
+                padding-top: 20px;
+                line-height: 16px;
                 .icon{
-                    background-position: 0 -20px;
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 0;
+                    left: 50%;
+                    margin-left: -10px;
+                    @extend %icon;
+                }
+                &:nth-of-type(1).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: 0 -20px;
+                    }
+                }
+                &:nth-of-type(2).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: -20px -20px;
+                    }
+                }
+                &:nth-of-type(3).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: -40px -20px;
+                    }
+                }
+                &:nth-of-type(4).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: -60px -20px;
+                    }
                 }
             }
-            &:nth-of-type(2).current{
-                color: $primary-color;
-                .icon{
-                    background-position: -20px -20px;
+        }
+    }
+    &.housekeeper-footer{
+        .flex{
+            .flex-cell{
+                border-right: 1px solid $border-color;
+                line-height: 48px;
+                &:last-child{
+                    border-right: none;
+                }
+                &.current{
+                    background-color: $primary-color;
+                    color: $white-color;
                 }
             }
-            &:nth-of-type(3).current{
-                color: $primary-color;
-                .icon{
-                    background-position: -40px -20px;
-                }
-            }
-            &:nth-of-type(4).current{
-                color: $primary-color;
-                .icon{
-                    background-position: -60px -20px;
-                }
-            }
+        }
+    }
+}
+
+// qa-box
+.qa-box{
+    padding:10px 0 10px 58px;
+    .author{
+        float: left;
+        margin-left: -58px;
+        width: 48px;
+        .avatar{
+            @extend %avatar;    
+        }
+        .name{
+            font-size: $normal-font-size;
+            color: $primary-color;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+        }
+    }
+    .breif{
+        font-size: $normal-font-size;
+        display: block;
+    }
+    .operate{
+        @include clearfix;
+        text-align: right;
+        .btn{
+            margin-left: 7px;
+        }
+    }
+    footer{
+        @include clearfix;
+        .replay{
+            text-align: right;
+            width: 30%;
+            overflow: hidden;
+            color: $second-color;
+            font-size: $smaller-font-size;
+            float: right;
+        }
+        .label-box{
+            float: left;
+            width: 70%;
+            overflow: hidden;
         }
     }
 }
@@ -236,38 +275,10 @@
             }
             .card-bd{
                 position: relative;
-                padding:10px 0 10px 58px;
                 border-top: 1px solid $border-color;
                 @include clearfix;
                 &.noborder{
                     border-top:none;
-                }
-                .author{
-                    float: left;
-                    margin-left: -58px;
-                    width: 48px;
-                    .avatar{
-                        @extend %avatar;    
-                    }
-                    .name{
-                        font-size: $normal-font-size;
-                        color: $primary-color;
-                        font-weight: bold;
-                        display: block;
-                        text-align: center;
-                        margin-top: 5px;
-                    }
-                }
-                .breif{
-                    font-size: $normal-font-size;
-                    display: block;
-                }
-                .operate{
-                    @include clearfix;
-                    text-align: right;
-                    .btn{
-                        margin-left: 7px;
-                    }
                 }
                 &.goods{
                     font-size: $small-font-size;
@@ -297,22 +308,6 @@
                     .reason{
                         color: $second-color;
                     }
-                }
-            }
-            .card-ft{
-                @include clearfix;
-                .replay{
-                    text-align: right;
-                    width: 30%;
-                    overflow: hidden;
-                    color: $second-color;
-                    font-size: $smaller-font-size;
-                    float: right;
-                }
-                .label-box{
-                    float: left;
-                    width: 70%;
-                    overflow: hidden;
                 }
             }
         }
@@ -719,3 +714,254 @@
         }
     }
 }
+
+// housekeeper
+.housekeeper-page{
+    background-color: #fff;
+    .question{
+        .flex{
+            width: 100%;
+            @include flex;
+            border-bottom: 1px solid $border-color;
+            .flex-cell{
+                font-size: $normal-font-size;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                position: relative;
+                &.current:after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $primary-color;
+                    overflow: hidden;
+                }
+            }
+        }
+        .list{
+            .item{
+                display: none;
+                &.current{
+                    display: block;
+                }
+                .qa-box{
+                    padding:10px 10px 10px 78px;
+                    border-bottom: 1px solid $border-color;
+                }
+                .answer{
+                    padding: 10px 15px 15px;
+                    border-bottom: 1px solid $border-color;
+                    .textarea{
+                        width: 100%;
+                        height: 150px;
+                        border: 1px solid $border-color;
+                    }
+                    .goods{
+                        position: relative;
+                        padding-top: 10px;
+                        .close{
+                            position: absolute;
+                            right: 0;
+                            top: 10px;
+                            z-index: 111;
+                            @extend %icon;
+                        }
+                        .goods-detail{
+                            @include clearfix;
+                            .goods-img{
+                                float: left;
+                                width: 70px;
+                                height: 55px;
+                            }
+                            .goods-name{
+                                font-size: $normal-font-size;
+                                display: block;
+                            }
+                            .goods-price{
+                                color: $primary-color;
+                                font-size: $normal-font-size;
+                                .number{
+                                    font-size: $big-font-size;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                        .reason{
+                            border: 1px solid $border-color;
+                            background-color: #eee;
+                            font-size: $small-font-size;
+                            line-height: 15px;
+                            margin-top: 5px;
+                            padding: 5px;
+                            color: $second-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.recommend-goods{
+    padding: 40px 15px;
+    .hd{
+        height: 40px;
+        line-height: 38px;
+        padding: 0 10px;
+        font-size: $normal-font-size;
+        border: 1px solid $border-color;
+    }
+    .list{
+        .item{
+            @include clearfix;
+            margin-top: 10px;
+            border: 1px solid $border-color;
+            padding: 10px 0 10px 10px;
+            .check{
+                float: left;
+                margin: 17px 10px 17px 0;
+            }
+            .goods-img{
+                float: left;
+                width: 70px;
+                height: 55px;
+            }
+            .goods-price{
+                float: left;
+                margin-left: 10px;
+                font-size: $big-font-size;
+                font-weight: bold;
+                color: $primary-color;
+                line-height: 55px;
+            }
+            .reward{
+                float: left;
+                margin-left: 10px;
+                color: $primary-color;
+                line-height: 55px;
+            }
+        }
+    }
+    .btn{
+        margin-top: 10px;
+        float: right;
+        width: 70px;
+        text-align: center;
+    }
+}
+.housekeeper-page{
+    .wealth{
+        .hd{
+            background-color: $primary-color;
+            padding: 20px 0;
+            text-align: center;
+            height: 88px;
+            line-height: 48px;
+            .box{
+                display: inline-block;
+                margin: 0 auto;
+                margin-right: -50px;
+                @include clearfix;
+                .price{
+                    font-size: 40px;
+                    color: $white-color;
+                    float: left;
+                    min-width: 100px;
+                }
+                .btn-cash{
+                    float: left;
+                    margin-top: 16px;
+                    margin-left: 5px;
+                    background-color: #ffd042;
+                    color: $primary-color;
+                    height: 23px;
+                    line-height: 23px;
+                    padding: 0 8px;
+                    border-radius: 4px;
+                    font-size: $small-font-size;
+                }
+            }
+            
+        }
+        .bd{
+            .tab-hd{
+                padding: 10px 15px;
+                a{
+                    &.current{
+                        color: $primary-color;
+                    }
+                }
+                .interval{
+                    display: inline-block;
+                    color: $second-color;
+                }
+            }
+            .tab-bd{
+                .item{
+                    display: none;
+                    .ul{
+                        margin: 0 12px;
+                        .li{
+                            border: 1px solid $border-color;
+                            padding: 6px 50px 6px 85px;
+                            line-height: 20px;
+                            position: relative;
+                            margin-bottom: 10px;
+                            .time{
+                                float: left;
+                                margin-left: -75px;
+                                color: $second-color;
+                                font-size: $small-font-size;
+                            }
+                            .text{
+                                font-size: $normal-font-size;
+                            }
+                            .opr{
+                                position: absolute;
+                                width: 40px;
+                                right: 50px;
+                                top: 6px;
+                                margin-right: -40px;
+                                text-align: right;
+                                color: $primary-color;
+                                font-size: $small-font-size;
+                            }
+                        }
+                    }
+                    &.current{
+                        display: block;
+                    }
+                }
+            }
+            &.invitation-list{
+                .ul{
+                    padding: 10px;
+                    margin-top: 10px;
+                    .li{
+                        padding-left: 58px;
+                        width: 100%;
+                        margin-bottom: 10px;
+                        @include clearfix;
+                        height: 48px;
+                        .avatar{
+                            @extend %avatar;  
+                            margin-left: -58px; 
+                            float: left; 
+                        }
+                        .name{
+                            font-size: $normal-font-size;
+                        }
+                        .datail{
+                            font-size: $small-font-size;
+                            color: $second-color;
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
