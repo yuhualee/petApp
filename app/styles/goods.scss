@@ -57,7 +57,7 @@ html,body{
 	    border-top: 1px solid $border-color;
 	    z-index: 99999;
 	    .flex{
-	        @include flex;
+	        @include clearfix;
 	        height: 100%;
 	        .flex-cell{
 	            text-align: center;
@@ -65,6 +65,8 @@ html,body{
 	            text-align: center;
 	            line-height: 28px;
 	            padding: 10px 0;
+	            float: left;
+	            width: 33%;
 	            .icon{
 	            	display: inline-block;
 	            	width: 20px;
@@ -102,6 +104,7 @@ html,body{
 	            &.add{
 	            	background-color: $primary-color;
 	            	color: $white-color;
+	            	width: 34%;
 	            }
 	        }
 	    }
@@ -216,10 +219,13 @@ html,body{
 			border-bottom: 1px solid $border-color;
 			border-top: 1px solid $border-color;
 			.tab-hd{
-				@include flex;
+				@include clearfix;
 				border-bottom: 1px solid $border-color;
 				line-height: 40px;
+				width: 100%;
 				.item{
+					float: left;
+					width: 25%;
 					text-align: center;
 					position: relative;
 					&.current:after{
@@ -242,6 +248,11 @@ html,body{
 							padding: 8px 12px;
 							border-bottom: 1px solid $border-color;
 							line-height: 22px;
+							.label{
+								display: inline-block;
+								width: 110px;
+								color: $second-color;
+							}
 							a{
 								position: relative;
 								display: block;

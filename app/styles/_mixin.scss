@@ -42,11 +42,13 @@
     display: -webkit-flex;
     display: -moz-flex;
     display: flex;
+    display: -webkit-flex-box;
     -webkit-box-align: center;
     -ms-flex-align: center;
     -moz-align-items: center;
     align-items: center;
         .flex-cell{
+            width: 1%;
         -webkit-box-flex:1;
            -moz-box-flex:1;
                 box-flex:1;
@@ -89,10 +91,10 @@
         background-position: -20px 0;
     }
     &.icon03{
-        background-position: -40px 0;
+        background-position: -60px 0;
     }
     &.icon04{
-        background-position: -60px 0;
+        background-position: -40px 0;
     }
     &.icon06{
         background-position: 0 -40px;
@@ -109,7 +111,28 @@
     &.icon11{
         background-position: 0px -60px;
     }
+    &.icon12{
+        background-position: -20px -60px;
+    }
+    &.icon13{
+        background-position: -40px -60px;
+    }
+    &.icon14{
+        background-position: -60px -60px;
+    }
+    &.icon15{
+        background-position: -80px -60px;
+    }
+    &.icon16{
+        background-position: -2px -83px;
+    }
+    &.icon17{
+        background-position: -20px -80px;
+    }
 }
 .primary-color{
     color: $primary-color;
+}
+.gray-color{
+    color: #ababab;
 }

@@ -58,3 +58,89 @@ i,em{
 }
 .fl{ float: left;}
 .fr{ float: right;}
+.container{
+    width: 100%;
+}
+.footer ~ .container{
+    padding-bottom: 48px;
+}
+.footer{
+    position: fixed;
+    height: 48px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border-top: 1px solid $border-color;
+    z-index: 99999;
+    .flex{
+        // @include flex;
+        width: 100%;
+        .flex-cell{
+            float: left;
+            width: 25%;
+            text-align: center;
+            position: relative;
+        }
+    }
+    &.main-footer{
+        padding: 6px;
+        .flex{
+            .flex-cell{
+                font-size: $smaller-font-size;
+                color: $default-color;
+                padding-top: 20px;
+                line-height: 16px;
+                .icon{
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 0;
+                    left: 50%;
+                    margin-left: -10px;
+                    @extend %icon;
+                }
+                &:nth-of-type(1).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: 0 -20px;
+                    }
+                }
+                &:nth-of-type(2).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: -20px -20px;
+                    }
+                }
+                &:nth-of-type(3).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: -60px -20px;
+                    }
+                }
+                &:nth-of-type(4).current{
+                    color: $primary-color;
+                    .icon{
+                        background-position: -40px -20px;
+                    }
+                }
+            }
+        }
+    }
+    &.housekeeper-footer{
+        .flex{
+            .flex-cell{
+                border-right: 1px solid $border-color;
+                line-height: 48px;
+                &:last-child{
+                    border-right: none;
+                }
+                &.current{
+                    background-color: $primary-color;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

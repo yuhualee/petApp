@@ -58,89 +58,6 @@
         }
     }
 }
-.container{
-    width: 100%;
-}
-.footer ~ .container{
-    padding-bottom: 48px;
-}
-.footer{
-    position: fixed;
-    height: 48px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    border-top: 1px solid $border-color;
-    z-index: 99999;
-    .flex{
-        @include flex;
-        .flex-cell{
-            text-align: center;
-            position: relative;
-        }
-    }
-    &.main-footer{
-        padding: 6px;
-        .flex{
-            .flex-cell{
-                font-size: $smaller-font-size;
-                color: $default-color;
-                padding-top: 20px;
-                line-height: 16px;
-                .icon{
-                    position: absolute;
-                    width: 20px;
-                    height: 20px;
-                    top: 0;
-                    left: 50%;
-                    margin-left: -10px;
-                    @extend %icon;
-                }
-                &:nth-of-type(1).current{
-                    color: $primary-color;
-                    .icon{
-                        background-position: 0 -20px;
-                    }
-                }
-                &:nth-of-type(2).current{
-                    color: $primary-color;
-                    .icon{
-                        background-position: -20px -20px;
-                    }
-                }
-                &:nth-of-type(3).current{
-                    color: $primary-color;
-                    .icon{
-                        background-position: -40px -20px;
-                    }
-                }
-                &:nth-of-type(4).current{
-                    color: $primary-color;
-                    .icon{
-                        background-position: -60px -20px;
-                    }
-                }
-            }
-        }
-    }
-    &.housekeeper-footer{
-        .flex{
-            .flex-cell{
-                border-right: 1px solid $border-color;
-                line-height: 48px;
-                &:last-child{
-                    border-right: none;
-                }
-                &.current{
-                    background-color: $primary-color;
-                    color: $white-color;
-                }
-            }
-        }
-    }
-}
 
 // qa-box
 .qa-box{
@@ -152,14 +69,16 @@
         .avatar{
             @extend %avatar;    
         }
-        .name{
-            font-size: $normal-font-size;
-            color: $primary-color;
-            font-weight: bold;
-            display: block;
-            text-align: center;
-            margin-top: 5px;
-        }
+    }
+    .name{
+        font-size: $normal-font-size;
+        color: $primary-color;
+        font-weight: bold;
+        display: block;
+        word-wrap: break-word;
+        word-break: break-all;
+        line-height: 1.5;
+        margin-bottom: 5px;
     }
     .breif{
         font-size: $normal-font-size;
@@ -215,10 +134,12 @@
         padding-right: 40px;
         padding: 9px 40px 6px 10px;
         .flex{
-            @include flex;
+            @include clearfix;
             float: left;
             width: 100%;
             .flex-cell{
+                float: left;
+                width: 25%;
                 text-align: center;
                 span{
                     display: inline-block;
@@ -331,6 +252,8 @@
             .name{
                 font-size: $big-font-size;
                 padding-top: 9px;
+                word-wrap: break-word;
+                word-break: break-all;
             }
             .job{
                 font-size: $big-font-size;
@@ -379,11 +302,11 @@
         border-bottom: 1px solid $border-color;
         font-size: $big-font-size;
         .hd{
-            padding: 20px 10px 20px 30px;
-            height: 69px;
+            padding: 20px 10px 10px 30px;
             .title{
                 float: left;
                 font-weight: bold;
+                margin-bottom: 10px;
             }
             .box{
                 @include clearfix;
@@ -396,6 +319,7 @@
                     padding: 0 10px;
                     background-color: #f5f5f5;
                     border-radius: 3px;
+                    margin-bottom: 10px;
                     &.add-btn{
                         width: 48px;
                         text-align: center;
@@ -521,11 +445,14 @@
         }
     }
     .nav-flex{
-        @include flex;
-        padding: 10px 5px;
+        @include clearfix;
+        padding: 10px 1%;
+        width: 100%;
         .flex-cell{
+            float: left;
+            width: 31%;
             text-align: center;
-            margin: 0 5px;
+            margin: 0 1%;
             border: 1px solid $border-color;
             border-radius: 5px;
             overflow: hidden;
@@ -695,14 +622,15 @@
                             .avatar{
                                 @extend %avatar;    
                             }
-                            .name{
-                                font-size: $normal-font-size;
-                                color: $primary-color;
-                                font-weight: bold;
-                                display: block;
-                                text-align: center;
-                                margin-top: 5px;
-                            }
+                        }
+                        .name{
+                            font-size: $normal-font-size;
+                            color: $primary-color;
+                            font-weight: bold;
+                            display: block;
+                            margin-bottom: 5px;
+                            word-wrap: break-word;
+                            word-break: break-all;
                         }
                         .breif{
                             font-size: $normal-font-size;
@@ -721,9 +649,11 @@
     .question{
         .flex{
             width: 100%;
-            @include flex;
+            @include clearfix;
             border-bottom: 1px solid $border-color;
             .flex-cell{
+                float: left;
+                width: 33%;
                 font-size: $normal-font-size;
                 height: 40px;
                 line-height: 40px;
@@ -762,6 +692,7 @@
                     .goods{
                         position: relative;
                         padding-top: 10px;
+                        @include clearfix;
                         .close{
                             position: absolute;
                             right: 0;
@@ -797,6 +728,19 @@
                             margin-top: 5px;
                             padding: 5px;
                             color: $second-color;
+                            width: 100%;
+                            height: 60px;
+                        }
+                        .btn-ok{
+                            float: right;
+                            width: 80px;
+                            height: 30px;
+                            line-height: 30px;
+                            background-color: $primary-color;
+                            color: #fff;
+                            text-align: center;
+                            border-radius: 3px;
+                            margin-top: 5px;
                         }
                     }
                 }
@@ -809,9 +753,23 @@
     .hd{
         height: 40px;
         line-height: 38px;
-        padding: 0 10px;
         font-size: $normal-font-size;
         border: 1px solid $border-color;
+        position: relative;
+        .search{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border: none;
+            padding-right: 50px;
+        }
+        .search-btn{
+            width: 45px;
+            height: 40px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
     }
     .list{
         .item{
@@ -855,35 +813,38 @@
     .wealth{
         .hd{
             background-color: $primary-color;
-            padding: 20px 0;
-            text-align: center;
+            padding: 14px 20px 14px 80px;
             height: 88px;
-            line-height: 48px;
             .box{
                 display: inline-block;
                 margin: 0 auto;
                 margin-right: -50px;
-                @include clearfix;
-                .price{
-                    font-size: 40px;
-                    color: $white-color;
-                    float: left;
-                    min-width: 100px;
-                }
-                .btn-cash{
-                    float: left;
-                    margin-top: 16px;
-                    margin-left: 5px;
-                    background-color: #ffd042;
-                    color: $primary-color;
-                    height: 23px;
-                    line-height: 23px;
-                    padding: 0 8px;
-                    border-radius: 4px;
-                    font-size: $small-font-size;
+                line-height: 30px;
+                .row{
+                    @include clearfix;
+                    color: #fff;
+                    .label{
+                        float: left;
+                        margin-right: 10px;
+                    }
+                    .num{
+                        float: left;
+                        font-size: 24px;
+                    }
+                    .btn-cash{
+                        float: left;
+                        margin-left: 15px;
+                        background-color: #ffd042;
+                        color: $primary-color;
+                        height: 23px;
+                        line-height: 23px;
+                        padding: 0 8px;
+                        border-radius: 4px;
+                        font-size: $small-font-size;
+                        margin-top: 3px;
+                    }
                 }
             }
-            
         }
         .bd{
             .tab-hd{
@@ -962,6 +923,83 @@
                 }
             }
         }
+    }
+}
+
+.invitation{
+    .hd{
+        height: 170px;
+        padding: 40px 0;
+        text-align: center;
+        background-color: $primary-color;
+        .avatar{
+            @extend %avatar;  
+            height: 90px;
+            width: 90px;
+            display: inline-block;
+        }
+    }
+    .bd{
+        .text{
+            padding: 20px;
+            .big{
+                font-weight: bold;
+            }
+            .tip{
+                line-height: 1.4;
+                margin-top: 5px;
+            }
+        }
+        .form{
+            .item{
+                height: 41px;
+                border-top: 1px solid $border-color;
+                border-bottom: 1px solid $border-color;
+                padding: 5px 10px 5px 90px;
+                position: relative;
+                margin-bottom: 10px;
+                background-color: #fff;
+                @include clearfix;
+                .label{
+                    float: left;
+                    width: 80px;
+                    margin-left: -80px;
+                    line-height: 30px;
+                }
+                .input{
+                    border:none;
+                    line-height: 30px;
+                    width: 100%;
+                    float: left;
+                }
+                &.yzm-item{
+                    padding-right: 110px;
+                    .yzm{
+                        float: right;
+                        width: 100px;
+                        margin-right: -100px;
+                        text-align: center;
+                        line-height: 30px;
+                        color: #4095f6;
+                        border-left: 1px solid $border-color;
+                    }
+                }
+            }
+        }
+        .padding{
+            padding: 20px 16%;
+            .btn-ok{
+                height: 36px;
+                line-height: 36px;
+                width: 100%;
+                border-radius: 18px;
+                text-align: center;
+                background-color: $primary-color;
+                display: block;
+                color: #fff;
+            }
+        }
+        
     }
 }
 

@@ -6,36 +6,39 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>管家中心-推荐商品</title>
+    <title>邀请好友3</title>
 
     <!-- build:css styles/index.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body class="housekeeper-page">
-    <article class="recommend-goods">
+  <body>
+    <div class="container invitation">
       <header class="hd">
-        <input type="text" class="search">
-        <a href="#" class="search-btn">搜索</a>
+        <span class="avatar">
+        </span>
       </header>
-      <ul class="list">
-        <li class="item">
-          <input type="checkbox" class="check">
-          <a href="#" class="goods-img"><img src="images/goods.jpg" alt=""></a>
-          <span class="goods-price">￥200</span>
-          <span class="reward">成交奖励：20</span>
-        </li>
-        <li class="item">
-          <input type="checkbox" class="check">
-          <a href="#" class="goods-img"><img src="images/goods.jpg" alt=""></a>
-          <span class="goods-price">￥200</span>
-          <span class="reward">成交奖励：20</span>
-        </li>
-      </ul>
-      <a href="#" class="btn btn-primary btn-big">确定</a>
-    </article>
-    
-
+      <div class="bd">
+        <div class="text">
+          <p class="big">欢迎您，<b class="primary-color">妮妮</b></p>
+          <p class="tip">完善个人资料，有助于我们更好的为您服务。手机号更是作为您在平台的唯一标识，请认真填写。</p>
+        </div>
+        <div class="form">
+          <div class="item">
+            <span class="label">手机号码</span>
+            <input type="text" class="input" placeholder="中国大陆手机号">
+          </div>
+          <div class="item yzm-item">
+            <span class="label">验证码</span>
+            <input type="text" class="input" placeholder="请输入验证码">
+            <a href="#" class="yzm">发送验证码</a>
+          </div>
+        </div>
+        <div class="padding">
+          <a href="#" class="btn-ok">提交</a>
+        </div>
+      </div>
+    </div>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/zeptojs/src/zepto.js"></script>

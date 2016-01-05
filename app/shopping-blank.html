@@ -6,36 +6,33 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>管家中心-推荐商品</title>
+    <title>订单流程-购物车1</title>
 
-    <!-- build:css styles/index.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- build:css styles/order-form.css -->
+    <link rel="stylesheet" href="styles/order-form.css">
     <!-- endbuild -->
   </head>
-  <body class="housekeeper-page">
-    <article class="recommend-goods">
-      <header class="hd">
-        <input type="text" class="search">
-        <a href="#" class="search-btn">搜索</a>
+  <body>
+    <div class="container shopping-cart footer-padding">
+      <header class="order-header">
+        <a href="#" class="arrow"></a>
+        <h1 class="title">购物车</h1>
       </header>
-      <ul class="list">
-        <li class="item">
-          <input type="checkbox" class="check">
-          <a href="#" class="goods-img"><img src="images/goods.jpg" alt=""></a>
-          <span class="goods-price">￥200</span>
-          <span class="reward">成交奖励：20</span>
-        </li>
-        <li class="item">
-          <input type="checkbox" class="check">
-          <a href="#" class="goods-img"><img src="images/goods.jpg" alt=""></a>
-          <span class="goods-price">￥200</span>
-          <span class="reward">成交奖励：20</span>
-        </li>
-      </ul>
-      <a href="#" class="btn btn-primary btn-big">确定</a>
-    </article>
-    
-
+      <article class="shopping">
+        <header class="hd">
+          <a href="order-check-address.html" class="arrow"></a>
+          <h1 class="title">购物车</h1>
+          <a href="#" class="right">完成</a>
+        </header>
+        <div class="bd shopping-blank">
+          <div class="blank">
+            <img src="images/blank.jpg" alt="" class="img">
+            <p class="tip">您的购物车中没有商品<br>快去选购吧！</p>
+            <a href="#" class="btn-hot">热门活动</a>
+          </div>
+        </div>
+      </article>
+    </div>    
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/zeptojs/src/zepto.js"></script>

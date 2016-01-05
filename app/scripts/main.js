@@ -2,9 +2,9 @@
 'use strict';
 /*global $:false, window:false */
 
-// var Module = {
-// 	pages: {}
-// };
+var Module = {
+	pages: {}
+};
 
 
 //image scale
@@ -23,6 +23,7 @@
 		imgScale($('.goods .top-banner img'),1);
 		imgScale($('.index-page .have-eat .box'),1);
 		imgScale($('.index-page .yummy .img'),1);
+		imgScale($('.order-success .list-bd .img'),1);
 	}
 
 	reset();
@@ -66,3 +67,10 @@
 		});
 	});
 })();
+
+Module.pages.goodShow = function(){
+	$('.show').on('tap',function(){
+		$('.goods-list .li').show();
+		$(this).hide();
+	});
+};
